@@ -1,1 +1,66 @@
-hellooooo
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Perce.io Paparazzi</title>
+        <meta name="description" content="Get pictures of any site you like.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400|Gentium+Basic" rel="stylesheet" type="text/css">
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+        <style>
+          body {
+            background : #2c3e50;
+            color: #ecf0f1;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+
+            text-align : center;
+          }
+
+          header, main {
+            width : 100%;
+            max-width : 600px;
+            margin : 0 auto;
+          }
+        </style>
+    </head>
+    <body>
+        <header>
+          <svg height="75" width="75" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <defs>
+              <filter id="shadow" x="0" y="0" width="102%" height="102%">
+                <feOffset result="offOut" in="SourceAlpha" dx="0.2" dy="0.2" />
+                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.2" />
+                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+              </filter>
+            </defs>
+            <polygon points="0,20 20,0 20,100 0,100" fill="#2980b8" stroke="" filter="url(#shadow)" />
+            <polygon points="20,0 80,0 100,20 20,20" fill="#3297da" stroke="" filter="url(#shadow)" />
+            <rect x="20" y="60" width="60" height="20" fill="#3297da" stroke="" filter="url(#shadow)" />
+            <polygon points="80,20 100,20 100,60 80,80" fill="#2980b8" stroke="" filter="url(#shadow)" />
+          </svg>
+
+          <h1>Perce.io Paparazzi</h1>
+        </header>
+        <main>
+          <p>Hello world! This is HTML5 Boilerplate.</p>
+        </main>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
