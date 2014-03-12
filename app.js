@@ -4,7 +4,13 @@ var webshot     = require( 'webshot' );
 var fs          = require( 'fs' );
 var gm          = require( 'gm' );
 var imageMagick = gm.subClass( { imageMagick: true } );
+var argv        = require( 'optimist' ).argv;
 
+// configurable options
+var picturePath = argv.picturePath || config.picturePath;
+var port        = argv.port || config.port;
+
+// create server instance
 var server = http.createServer( function ( req, res ) {
   var match = req.url.match( /\/width\/(\d+?)\/height\/(\d+?)\/url\/(.+?)(\?scale=(\d+)){0,1}$/ );
 
@@ -33,7 +39,7 @@ var server = http.createServer( function ( req, res ) {
  * @param  {Object} res     response object
  */
 function serveImage( options, res ) {
-  options.filePath = config.picturePath + '/' +
+  options.filePath = picturePath + '/' +
                       options.width + '/' +
                       options.height + '/' +
                       options.scale + '/' +
@@ -133,5 +139,6 @@ function serveWebsite( res ) {
 }
 
 
-server.listen( config.port );
-console.log( 'Server running at http://127.0.0.1:' + config.port);
+// let's kick things off
+server.listen( port );
+console.log( 'Server running at http://127.0.0.1:' + port);
