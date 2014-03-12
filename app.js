@@ -37,7 +37,7 @@ function serveImage( options, res ) {
                       options.width + '/' +
                       options.height + '/' +
                       options.scale + '/' +
-                      options.url + '.png';
+                      options.url.replace( '/', '_' ) + '.png';
 
   fs.exists( options.filePath , function( exists ) {
     if ( exists ) {
