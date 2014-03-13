@@ -10,6 +10,15 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
         <style>
+          * {
+            -moz-box-sizing : border-box;
+            box-sizing : border-box;
+          }
+
+          a, a:visited {
+            color : #e74c3c;
+          }
+
           body {
             background : #2c3e50;
             color: #ecf0f1;
@@ -17,43 +26,301 @@
             font-family: 'Open Sans', sans-serif;
 
             text-align : center;
+
+            padding : 0;
+            margin  : 0;
           }
 
-          header, main {
+          footer {
+            background : #14212e;
+            overflow : hidden;
+
+            padding-top : 1rem;
+          }
+
+          header {
+            background : #1c2e40;
+            text-align : center;
+          }
+
+          h1, h2 {
+            display : inline-block;
+            margin : 0;
+            padding : 1.5rem;
+
+            font-size : 1.5rem;
+          }
+
+          img {
+            margin: 1rem 0 3rem;
+          }
+
+          input {
+            height : 3rem;
+            font-size : 1.5rem;
+
+            margin : 0;
+
+            display : block;
             width : 100%;
-            max-width : 600px;
+
+            background : #2980b9;
+
+            text-align : center;
+            color : #ecf0f1;
+            border : none;
+          }
+
+          button:active, button:focus, input:active, input:focus {
+            outline : 1px solid #ecf0f1;
+          }
+
+          main {
+            padding : 2rem 0 0 0;
+          }
+
+          p {
+            text-align : justify;
+          }
+
+          .container {
+            width : 100%;
+            max-width : 700px;
             margin : 0 auto;
+          }
+
+          .controls, .controls li {
+            margin : 0;
+            padding : 0;
+          }
+
+          .controls button, .newsletterForm button {
+            height : 3rem;
+
+            background : #e74c3c;
+            color : #ecf0f1;
+
+            border : none;
+
+            font-size : 1.5rem;
+
+            -webkit-transition: 0.25s linear background;
+            -moz-transition: 0.25s linear background;
+            -o-transition: 0.25s linear background;
+            -ms-transition: 0.25s linear background;
+            transition: 0.25s linear background;
+          }
+
+          .controls button {
+            width : 100%;
+          }
+
+          .controls button:hover, .newsletterForm button:hover {
+            background : #ed7669;
+          }
+
+          .controls label {
+            line-height : 2rem;
+          }
+
+          .controls li {
+            position : relative;
+            display : inline-block;
+            width : 33%;
+            padding : 0 0.5rem;
+          }
+
+          .controls li.large {
+            width : calc( 100% - 0.5rem );
+          }
+
+          .controls li:last-child {
+            margin: 1rem 0;
+          }
+
+          .newsletterForm {
+            margin-top : 2rem;
+          }
+
+          .newsletterForm .email, .newsletterForm .button {
+            display : inline-block;
+          }
+
+          .newsletterForm input {
+            width : 68%;
+
+            margin-right : 2%;
+          }
+
+          .newsletterForm button {
+            width : 30%;
+          }
+
+          .logo {
+            margin-bottom : -0.5rem;
+          }
+
+          .love {
+            padding : 1rem 0 0;
+            text-align : center;
+            font-size : 0.8rem;
+          }
+
+          .url {
+            line-height : 2rem;
+            border : 1px solid #ecf0f1;
+            margin : 1rem 0 0 0;
+            padding : 0.5rem;
           }
         </style>
     </head>
     <body>
         <header>
-          <svg height="75" width="75" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <defs>
-              <filter id="shadow" x="0" y="0" width="102%" height="102%">
-                <feOffset result="offOut" in="SourceAlpha" dx="0.2" dy="0.2" />
-                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.2" />
-                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-              </filter>
-            </defs>
-            <polygon points="0,20 20,0 20,100 0,100" fill="#2980b8" stroke="" filter="url(#shadow)" />
-            <polygon points="20,0 80,0 100,20 20,20" fill="#3297da" stroke="" filter="url(#shadow)" />
-            <rect x="20" y="60" width="60" height="20" fill="#3297da" stroke="" filter="url(#shadow)" />
-            <polygon points="80,20 100,20 100,60 80,80" fill="#2980b8" stroke="" filter="url(#shadow)" />
-          </svg>
-
-          <h1>Perce.io Paparazzi</h1>
+          <div class="container">
+            <h1>Perce.io</h1>
+            <svg class="logo" height="40" width="40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+              <defs>
+                <filter id="shadow" x="0" y="0" width="102%" height="102%">
+                  <feOffset result="offOut" in="SourceAlpha" dx="0.2" dy="0.2" />
+                  <feGaussianBlur result="blurOut" in="offOut" stdDeviation="0.2" />
+                  <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                </filter>
+              </defs>
+              <polygon points="0,20 20,0 20,100 0,100" fill="#2980b8" stroke="" filter="url(#shadow)" />
+              <polygon points="20,0 80,0 100,20 20,20" fill="#3297da" stroke="" filter="url(#shadow)" />
+              <rect x="20" y="60" width="60" height="20" fill="#3297da" stroke="" filter="url(#shadow)" />
+              <polygon points="80,20 100,20 100,60 80,80" fill="#2980b8" stroke="" filter="url(#shadow)" />
+            </svg>
+            <h2>Paparazzi</h2>
+          </div>
         </header>
         <main>
-          <p>Hello world! This is HTML5 Boilerplate.</p>
+          <div class="container">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="128" height="128" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+            <g id="CAMERA_1_" enable-background="new    ">
+              <g id="CAMERA">
+                <g>
+                  <path d="M32,22c-6.627,0-12,5.372-12,12c0,6.627,5.373,12,12,12s12-5.373,12-12S38.627,22,32,22z M61,12H48.243l-5.095-5.094
+                    l-0.002,0.003C42.602,6.35,41.843,6,41,6H23c-0.976,0-1.835,0.474-2.383,1.196L15.813,12H3c-1.657,0-3,1.343-3,3v40
+                    c0,1.657,1.343,3,3,3h58c1.657,0,3-1.343,3-3V15C64,13.343,62.657,12,61,12z M32,52c-9.941,0-18-8.059-18-18
+                    c0-9.941,8.059-18,18-18c9.941,0,18,8.059,18,18C50,43.941,41.941,52,32,52z" fill="#ecf0f1"/>
+                </g>
+              </g>
+            </g>
+            </svg>
+            <h3>May I introduce... Perce.io Paparazzi.</h3>
+            <p>You need screenshots of any page accessible on the internet included in your site? You want to pimp up listings of several web pages with fancy thumbnails showing the depending page? And it would be great, if you could decide in which size the images will be served? Great, then Paparazzi is something for you...</p>
+            <h4>Wanna play around with it? Here we are!</h4>
+            </p>
+            <form id="previewForm">
+              <ul class="controls">
+                <li>
+                  <label for="imageWidth">viewport width in px</label>
+                  <input id="imageWidth" name="imageWidth" type="number" name="width" value="800" data-label="previewWidth" required>
+                <li>
+                  <label for="imageHeight">viewport height in px</label>
+                  <input id="imageHeight" name="imageHeight" type="number" name="height" value="600" data-label="previewHeight" required>
+                <li>
+                  <label for="imageScale">scale in percent</label>
+                  <input id="imageScale" name="imageScale" type="number" name="height" value="100" data-label="previewScale" required>
+                <li class="large">
+                  <label for="imageUrl">url</label>
+                  <input id="imageUrl" name="imageUrl" type="text" name="height" value="google.de" data-label="previewUrl" required>
+                <li class="large">
+                  <div class="url">http://paparazzi.perce.io/width/<span id="previewWidth">800</span>/height/<span id="previewHeight">600</span>/url/<span id="previewUrl">paparazzi.perce.io</span>?scale=<span id="previewScale">100</span></div>
+                <li class="large">
+                  <button>Fetch it!!!</button>
+              </ul>
+            </form>
+          </div>
+          <img id="previewImage" src="http://local.paparazzi.io:4000/width/800/height/600/url/google.de">
         </main>
+        <footer>
+          <div class="container">
+            <p>We love open source and all the great technology, that is with us every day. And that is the reason, why we decided to make this little service public. Use it! Play around with it! File issues! And if you have any troubles with it, let us know. We are glad to help.</p>
+            <p>Perce.io will be a new web application, that helps you to keep track of frontend performance metrics. Wondering how your website evolved over the last few weeks? Want to have a general overview about CSS quality and eventual bad practices? Asking your self how you JavaScript codebase behaves? Awesome, so do we!</p>
+            <p>We are working hard on it and plan to open a private beta by the middle of the year 2014. If you are interested in any progress, feel free to subscribe to our brand new newsletter. :)</p>
+            <form action="http://perce.us3.list-manage.com/subscribe/post?u=6ae6fc59ca8723f4d3c492b39&amp;id=c5c0d65d3e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletterForm" target="_blank" novalidate>
+              <div class="mc-field-group">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="your e-mail here *"><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">subscribe</button>
+              </div>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none; margin-top: 20px;"></div>
+              </div>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;">
+                <input type="text" name="b_6ae6fc59ca8723f4d3c492b39_c5c0d65d3e" value="">
+              </div>
+            </form>
+          </div>
+          <p class="love">manufactered with &#x2764; by <a href="https://twitter.com/perceio">perce.io</a> in berlin</p>
+        </footer>
+        <script>
+          ( function() {
+              /**
+               * Attach eventlistener to given event
+               *
+               * THX to John Resig
+               * http://ejohn.org/projects/flexible-javascript-events/
+               *
+               * @param {Object}   obj  dom element
+               * @param {String}   type event type
+               * @param {Function} fn   event listener
+               */
+              function addEvent( obj, type, fn ) {
+                if ( obj.attachEvent ) {
+                  obj[ 'e' + type + fn ] = fn;
+                  obj[ type + fn ]       = function() {
+                    obj[ 'e' + type + fn ]( window.event );
+                  };
+                  obj.attachEvent( 'on'+type, obj[ type + fn ] );
+                } else {
+                  obj.addEventListener( type, fn, false );
+                }
+              }
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+              var inputs = document.querySelectorAll( '.controls input' );
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+              for( var i = 0; i < inputs.length; i++ ) {
+                addEvent(
+                  inputs[ i ],
+                  'change',
+                  function( event ) {
+                    var label = document.getElementById( event.target.getAttribute( 'data-label' ) );
+
+                    label.innerHTML = event.target.value;
+                  }
+                );
+
+                addEvent(
+                  inputs[ i ],
+                  'keyup',
+                  function( event ) {
+                    var label = document.getElementById( event.target.getAttribute( 'data-label' ) );
+                    label.innerHTML = event.target.value;
+                  }
+                );
+              }
+
+              var form = document.getElementById( 'previewForm' );
+
+              addEvent(
+                form,
+                'submit',
+                function( event ) {
+                  event.preventDefault();
+
+                  document.getElementById( 'previewImage' ).src =
+                    'http://localhost:4000/' +
+                      'width/' + event.target.imageWidth.value + '/' +
+                      'height/' + event.target.imageHeight.value + '/' +
+                      'url/' + event.target.imageUrl.value + '?' +
+                      'scale=' + event.target.imageScale.value;
+                }
+              );
+          } )();
+        </script>
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
