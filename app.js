@@ -77,7 +77,7 @@ function createImage( options, res ) {
     options.url,
     options.filePath,
     {
-      screenSize :{
+      screenSize : {
         width  : options.width,
         height : options.height
       }
