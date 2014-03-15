@@ -10,6 +10,9 @@ var argv        = require( 'optimist' ).argv;
 var picturePath = argv.picturePath || config.picturePath;
 var port        = argv.port || config.port;
 
+// load page
+var page        = fs.readFileSync( __dirname + '/index.html', 'utf8' );
+
 // create server instance
 var server = http.createServer( function ( req, res ) {
   var match = req.url.match( /\/width\/(\d+?)\/height\/(\d+?)\/url\/(.+?)(\?scale=(\d+)){0,1}$/ );
@@ -127,16 +130,8 @@ function resizeImage( options, res ) {
  * @param  {Object} res response object
  */
 function serveWebsite( res ) {
-  fs.readFile( './index.html', 'utf8', function( err, file ) {
-    if ( err ) {
-      console.log( err );
-      res.statusCode = 500;
-      res.end();
-    } else {
-      res.writeHead( 200, { 'Content-Type' : 'text/html; charset=utf-8' } );
-      res.end( file, 'binary' );
-    }
-  } );
+  res.writeHead( 200, { 'Content-Type' : 'text/html; charset=utf-8' } );
+  res.end( page, 'utf8' );
 }
 
 
