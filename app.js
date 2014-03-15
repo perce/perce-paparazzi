@@ -13,9 +13,10 @@ var port        = argv.port || config.port;
 // load page
 var page        = fs.readFileSync( __dirname + '/index.html', 'utf8' );
 
+
 // create server instance
 var server = http.createServer( function ( req, res ) {
-  var match = req.url.match( /\/width\/(\d+?)\/height\/(\d+?)\/url\/(.+?)(\?scale=(\d+)){0,1}$/ );
+  var match = req.url.match( /\/width\/(\d{3,4})\/height\/(\d{3,4})\/url\/(.+?)(\?scale=(\d{1,3})){0,1}$/ );
 
   if ( match !== null ) {
     var options = {
