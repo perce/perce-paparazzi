@@ -27,7 +27,6 @@ var server = http.createServer( function ( req, res ) {
     };
 
     serveImage( options, res );
-
   } else {
     serveWebsite( res );
   }
