@@ -39,11 +39,13 @@ var server = http.createServer( function ( req, res ) {
  * @param  {Object} res     response object
  */
 function serveImage( options, res ) {
-  options.filePath = picturePath + '/' +
-                      options.width + '/' +
-                      options.height + '/' +
-                      options.scale + '/' +
-                      options.url.replace( '/', '_' ) + '.png';
+  options.filePath = [
+    picturePath,
+    options.width,
+    options.height,
+    options.scale,
+    options.url.replace( '/', '_' ) + '.png'
+  ].join( '/' );
 
   fs.exists( options.filePath , function( exists ) {
     if ( exists ) {
