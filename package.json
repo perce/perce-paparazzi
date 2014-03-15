@@ -1,0 +1,22 @@
+{
+  "name": "perce-paparazzi",
+  "version": "0.0.0",
+  "description": "Take screenshots of any site in the world wide web",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/perce/perce-paparazzi.git"
+  },
+  "keywords": [
+    "screenshot"
+  ],
+  "author": "perce.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perce/perce-paparazzi/issues"
+  },
+  "homepage": "https://github.com/perce/perce-paparazzi"
+}
