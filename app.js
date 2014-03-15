@@ -50,9 +50,8 @@ function serveImage( options, res ) {
       var img = fs.readFileSync( options.filePath );
 
       console.log( 'CACHED SERVING:' + options.filePath );
-      res.writeHead( 200, {'Content-Type': 'image/gif' } );
+      res.writeHead( 200, {'Content-Type': 'image/png' } );
       res.end( img, 'binary' );
-
     } else {
       createImage( options, res );
     }
@@ -111,7 +110,7 @@ function resizeImage( options, res ) {
         var img = fs.readFileSync( options.filePath );
 
         console.log( 'GENERATED SERVING:' + options.filePath );
-        res.writeHead( 200, {'Content-Type': 'image/gif' } );
+        res.writeHead( 200, {'Content-Type': 'image/png' } );
         res.end( img, 'binary' );
       } else {
         console.log( 'ERROR IN IMAGEMAGICK' );
