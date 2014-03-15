@@ -50,17 +50,18 @@ function serveImage( options, res ) {
     options.url.replace( '/', '_' ) + '.png'
   ].join( '/' );
 
-  fs.exists( options.filePath , function( exists ) {
-    if ( exists ) {
-      var img = fs.readFileSync( options.filePath );
-
-      console.log( 'CACHED SERVING:' + options.filePath );
-      res.writeHead( 200, {'Content-Type': 'image/png' } );
-      res.end( img, 'binary' );
-    } else {
-      createImage( options, res );
-    }
-  } );
+  // try to load picture
+  // otherwise try to create it
+  fs.createReadStream( options.filePath )
+    .on( 'readable', function () {
+      res.writeHead( 200, { 'Content-Type' : 'image/png' });
+      this.pipe( res );
+    } )
+    .on( 'error', function ( error ) {
+      if ( error.code === 'ENOENT' ) {
+        createImage( options, res );
+      }
+    } );
 }
 
 
