@@ -54,7 +54,7 @@ function serveImage( options, res ) {
   // otherwise try to create it
   fs.createReadStream( options.filePath )
     .on( 'readable', function () {
-      res.writeHead( 200, { 'Content-Type' : 'image/png' });
+      res.writeHead( 200, { 'Content-Type' : 'image/png' } );
       this.pipe( res );
     } )
     .on( 'error', function ( error ) {
